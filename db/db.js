@@ -10,7 +10,7 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 
 mongoose.connect(
-  `mongodb+srv://${USER}:${PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`,
+  `mongodb+srv://${USER}:${PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`,{ useFindAndModify: false },
   () => {
     if (!mongoose.connect) {
       console.log('Problem with connection to DB');
