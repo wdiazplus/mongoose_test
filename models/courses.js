@@ -9,14 +9,16 @@ const courseScheme = new mongoose.Schema({
   },
   description: {
     type: String,
-    minlength: [50,'No se cumple con el mínimo para una descripción'],
+    minlength: [50, 'No se cumple con el mínimo para una descripción'],
     maxlength: 300,
   },
   numberOfTopics: {
     type: Number,
     default: 1,
-    min:0,
-    max:10,
+    min: 0,
+    max: 10,
+    //select: false hidden numberOfTopics in queries
+    select: false,
   },
   publishedAt: Date,
   gender: {
